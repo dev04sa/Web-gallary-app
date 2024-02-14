@@ -13,11 +13,7 @@ export default function Home() {
         <Navbar />
         <Hero />
       </div>
-      <div className="m-6 absolute  ">
-        {" "}
-        {/* Adjust the top margin as needed */}
-        <HomePage />
-      </div>
+     
     </div>
   );
 }
