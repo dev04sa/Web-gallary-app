@@ -16,10 +16,11 @@ export function CarouselGallery(props) {
   );
 
   return (
-    <div className=" bg-yellow-500  ">
-      <p className=" text-center text-4xl pt-10 font-bold  ">Coursel</p>
-
-      <div className="  flex justify-center items-center h-screen  ">
+    <div className=" bg-orange-400 w-full mb-10   ">
+      <p className=" text-center  text-4xl pt-10 font-bold text-white  ">
+        {props.title}
+      </p>
+      <div className=" w-full  flex flex-row justify-center items-center h-screen  ">
         <Carousel
           plugins={[plugin.current]}
           className="w-full max-w-4xl"
@@ -38,7 +39,7 @@ export function CarouselGallery(props) {
             {props.images &&
               props.images.map((item, index) => (
                 <CarouselItem key={index}>
-                  <div className="m-40 p-16 w-[500px] h-[500px] flex justify-center items-center ">
+                  <div className="  md:m-40 p-10 md:w-[500px] md:h-[500px] flex justify-center items-center ">
                     <Image
                       src={item.urls.small}
                       alt={item.alt}
@@ -50,58 +51,13 @@ export function CarouselGallery(props) {
               ))}
           </CarouselContent>
 
-          <CarouselPrevious />
-          <CarouselNext />
+          <div className="hidden md:block">
+            <CarouselPrevious />
+            <CarouselNext />
+          </div>
         </Carousel>
       </div>
     </div>
   );
 }
 
-// "use client";
-// import * as React from "react";
-// import Autoplay from "embla-carousel-autoplay";
-// import Image from "next/image";
-
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from "@/components/ui/carousel";
-
-// export function CarouselGallery(props) {
-//   const plugin = React.useRef(
-//     Autoplay({ delay: 2000, stopOnInteraction: true })
-//   );
-
-//   return (
-//     <div className="flex justify-center items-center h-screen">
-//       <div className="flex justify-center items-center w-full">
-//         <Carousel
-//           plugins={[plugin.current]}
-//           className="max-w-4xl"
-//           onMouseEnter={plugin.current.stop}
-//           onMouseLeave={plugin.current.reset}
-//         >
-//           <CarouselContent>
-//             {props.images.map((item, index) => (
-//               <CarouselItem key={index}>
-//                 <div className="p-1 flex justify-center items-center  ">
-//                   <div className="w-full h-64 bg-cover ">
-//                     {" "}
-//                     {/* Set a fixed height for the image container */}
-//                     <Image src={item.urls.small} alt={item.alt} layout="fill" />
-//                   </div>
-//                 </div>
-//               </CarouselItem>
-//             ))}
-//           </CarouselContent>
-//           <CarouselPrevious />
-//           <CarouselNext />
-//         </Carousel>
-//       </div>
-//     </div>
-//   );
-// }

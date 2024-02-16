@@ -1,32 +1,44 @@
+
+
 "use client";
 
 import React, { useCallback, useEffect, useState } from "react";
-import axios from "axios"; // Don't forget to import axios
+import axios from "axios";
 import requests from "@/components/Request";
 import StagedScrollingGalleryPage from "@/components/StagedScrollingGalleryPage";
 
 const Page = () => {
-  const [images1, setImages1] = useState([]);
-  const [images2, setImages2] = useState([]);
-  const [images3, setImages3] = useState([]);
-  const [images4, setImages4] = useState([]);
+  const [images, setImages] = useState({
+    shoes: [],
+    nature: [],
+    flower: [],
+    Film: [],
+    Animals: [],
+    Food: [],
+    Wallpapers: [],
+  });
 
   const fetchImages = useCallback(async () => {
     try {
-      // const { data } = await requests.shoes;
       const res1 = await axios.get(requests.shoes);
       const res2 = await axios.get(requests.nature);
       const res3 = await axios.get(requests.Flower);
       const res4 = await axios.get(requests.Sports);
-      // const { data } = await axios.get(
-      //   `${API_URL}?query=shoes&per_page=${IMAGES_PER_PAGE}&client_id=${process.env.NEXT_PUBLIC_YOUR_API_KEY}`
-      // );
+      const res5 = await axios.get(requests.Film);
+      const res6 = await axios.get(requests.Animals);
+      const res7 = await axios.get(requests.Food);
+      const res8 = await axios.get(requests.Wallpapers);
 
-      setImages1(res1.data.results);
-      setImages2(res2.data.results);
-      setImages3(res3.data.results);
-      setImages4(res4.data.results);
-      // setImages2(data2.results);
+      setImages({
+        shoes: res1.data.results,
+        nature: res2.data.results,
+        flower: res3.data.results,
+        sports: res4.data.results,
+        Film: res5.data.results,
+        Animals: res6.data.results,
+        Food: res7.data.results,
+        Wallpapers: res8.data.results,
+      });
     } catch (error) {
       console.log(error);
     }
@@ -38,10 +50,20 @@ const Page = () => {
 
   return (
     <div>
-      <StagedScrollingGalleryPage images={images1} />
-      <StagedScrollingGalleryPage images={images2} />
-      <StagedScrollingGalleryPage images={images3} />
-      <StagedScrollingGalleryPage images={images4} />
+      <StagedScrollingGalleryPage
+        images={images.shoes}
+        title={"Trending Shoes"}
+      />
+      <StagedScrollingGalleryPage images={images.nature} title={"Nature"} />
+      <StagedScrollingGalleryPage images={images.flower} title={"Flowers"} />
+      <StagedScrollingGalleryPage images={images.sports} title={"Sports"} />
+      <StagedScrollingGalleryPage images={images.Film} title={"Film"} />
+      <StagedScrollingGalleryPage images={images.Animals} title={"Animals"} />
+      <StagedScrollingGalleryPage images={images.Food} title={"Food"} />
+      <StagedScrollingGalleryPage
+        images={images.Wallpapers}
+        title={"Wallpapers"}
+      />
     </div>
   );
 };
