@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Web Gallery App
 
-## Getting Started
+Welcome to the Web Gallery App, a Next.js application for showcasing various types of image galleries using the Unsplash API.
 
-First, run the development server:
+## Features
+
+- **Cover Image Landing Page:** The landing page of the app features a cover image that spans the entire screen size, providing an immersive experience for users.
+
+- **Different Types of Image Galleries:** The app includes pages containing at least three different types of image galleries, such as collage, staged scrolling, and carousel. These galleries are populated with images fetched from the Unsplash API, providing a dynamic and visually appealing experience for users.
+
+## Installation
+
+1. Clone the repository to your local machine:
+
+```bash
+git clone https://github.com/dev04sa/web-gallery-app.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd web-gallery-app
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+## Usage
+
+1. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Open your web browser and navigate to [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Next.js: A React framework for building server-rendered applications.
+- Unsplash API: An API for accessing a vast collection of high-quality images.
 
-## Learn More
+## Contributing
 
-To learn more about Next.js, take a look at the following resources:
+Contributions are welcome! If you'd like to contribute to this project, please follow these steps:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/new-feature`).
+3. Make your changes.
+4. Commit your changes (`git commit -am 'Add new feature'`).
+5. Push to the branch (`git push origin feature/new-feature`).
+6. Create a new Pull Request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+7. ## Deployment
 
-## Deploy on Vercel
+The project is deployed on Vercel and can be accessed at [web-gallary-app.vercel.app](https://web-gallary-app.vercel.app/).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+Special thanks to the creators of Next.js and the Unsplash API for providing the tools and resources necessary to build this application.
